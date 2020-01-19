@@ -1,0 +1,2 @@
+## cocomeshi API
+ココめしのWeb、アプリのAPIサーバ
