@@ -1,9 +1,9 @@
 package model
 
 type Result struct {
-	success bool
-	error   Error
-	data    interface{}
+	Success bool
+	Error   *Error
+	Data    interface{}
 }
 
 type Error struct {

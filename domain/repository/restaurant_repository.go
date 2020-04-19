@@ -1,11 +1,10 @@
 package repository
 
 import (
-	"context"
-
 	"github.com/cocomeshi/cocomeshi-api/domain/model"
+	"github.com/labstack/echo"
 )
 
 type RestaurantRepository interface {
-	FindAll(ctx context.Context) ([]*model.Restaurant, error)
+	FindAll(ctx *echo.Context) ([]model.Restaurant, error)
 }

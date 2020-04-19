@@ -11,19 +11,22 @@ import (
 func main() {
 	e := echo.New()
 	e.GET("/restaurants", func(c echo.Context) error {
-		datas, err := usecase.GetRestaurantList(c)
+		datas, err := usecase.GetRestaurantList(&c)
 		if err != nil {
 			r := &model.Result{
-				success: false,
-				error:   &Error{},
-				data:    nil,
+				Success: false,
+				Error: &model.Error{
+					Code:    "",
+					Message: "",
+				},
+				Data: nil,
 			}
 			return c.JSON(http.StatusInternalServerError, r)
 		}
 		r := &model.Result{
-			success: true,
-			error:   nil,
-			data:    datas,
+			Success: true,
+			Error:   nil,
+			Data:    datas,
 		}
 		return c.JSON(http.StatusOK, r)
 	})

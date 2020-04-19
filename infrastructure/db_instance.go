@@ -5,9 +5,9 @@ import (
 	"log"
 )
 
-var instance *sql.DB = NewInstance()
+var instance *sql.DB = newInstance()
 
-func NewInstance() *sql.DB {
+func newInstance() *sql.DB {
 	i, e := sql.Open("mysql", "root@tcp(127.0.0.1:3306)/cocomeshi")
 	if e != nil {
 		log.Fatal(e)
