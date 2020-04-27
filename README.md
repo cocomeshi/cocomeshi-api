@@ -1,5 +1,5 @@
 ## cocomeshi API
-ココめしのAPIサーバ
+ココめしのAPIサーバ  
 https://cocomeshi-app.dt.r.appspot.com/
 
 ### Cloud SQLへの接続
