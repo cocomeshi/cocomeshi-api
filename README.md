@@ -2,4 +2,8 @@
 ココめしのAPIサーバ
 https://cocomeshi-app.dt.r.appspot.com/
 
-gcloud sql connect cocomeshi-db --user=tscb
+### Cloud SQLへの接続
+$ gcloud sql connect cocomeshi-db --user=tscb
+
+### プロジェクトのデプロイ
+$ gcloud app deploy --project cocomeshi-app
