@@ -1,13 +1,13 @@
-FROM golang
+FROM golang:1.13
 
 WORKDIR /app
 
-ADD . /app
+COPY . ./
 
 RUN go get
 RUN go install
-RUN ls -lrt
+RUN CGO_ENABLED=0 GOOS=linux go build -mod=readonly -v -o server
 
 EXPOSE 8080
 
-CMD ["go", "run", "server.go"]
+CMD ["/app/server"]
