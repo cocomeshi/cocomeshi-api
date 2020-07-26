@@ -17,7 +17,6 @@ func NewRestaurantRepository() repository.RestaurantRepository {
 
 func (r *ImplRestaurantRespository) FindAll(ctx *echo.Context) ([]model.Restaurant, error) {
 	db := GetInstance()
-	defer db.Close()
 	rows, err := db.Query("select id, name, address, longitude, latitude, area_kind from restaurant")
 	if err != nil {
 		return []model.Restaurant{}, err
